@@ -4,7 +4,6 @@ get3 = await get0.json()
 var circulatingSupply = get3.circulating_supply;
 var maxSupply = get3.max_supply;
 var percentage = (circulatingSupply / maxSupply) * 100;
-
 var roundedPercentage = percentage.toFixed(2);
 document.getElementById('circ').textContent = roundedPercentage + '%'
 }
