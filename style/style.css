@@ -1,0 +1,46 @@
+html {
+    font-size: 62.5%;
+    overflow-x: hidden; }
+  
+  body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-size: 1.6rem; }
+    body:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      opacity: 3;
+      z-index: -1;
+      background: #FF6729;
+      background: -webkit-linear-gradient(to  top left, #FF6729, #1A1A1A);
+      background: linear-gradient(to top left, #FF6729, #1A1A1A); }
+
+      h1 {
+        font-size: 7.8rem;
+    color: white; }
+
+    @media (min-width: 1200px) {
+        h1 {
+            font-size: 20.8rem;
+        } }
+
+        .desc {
+            color: white;
+            font-size: 6rem;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @media (min-width: 768px) and (max-width: 1200px) {
+          p {
+            font-size: 1.5  rem;
+        } }
