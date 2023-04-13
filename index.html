@@ -33,54 +33,29 @@
     <div class="rowbox0">
       <div class="box0">
         <span class="subtitle">Token Holders</span>
-        <span class="title">hi</span>
+        <span class="title"><p id="myParagraph"></p></span>
         <span class="foot">address</span>
       </div>
       <div class="box0">
         <span class="subtitle">Price</span>
-        <span class="title">0.055</span>
-        <span class="foot">VITC/VITE</span>
+        <span class="title"><p id="usd"></p></span>
+        <span class="foot">USD</span>
       </div>
       <div class="box0">
         <span class="subtitle">Circulating Supply</span>
-        <span class="title">70%</span>
+        <span class="title"><p id="circ">%</p></span>
         <span class="foot">x/x</span>
       </div>
       <div class="box0">
         <span class="subtitle">Total Burn</span>
-        <span class="title">23%</span>
+        <span class="title"><p id="burn"></p></span>
         <span class="foot">Price</span>
       </div>
 
     </div>
 
   </div>
-
-
-  <script>
-    function mobileMenu(){
-      let mbMn = document.getElementById("mbMenu");
-      if (mbMn.style.display === "block") {
-        mbMn.style.display = "none";
-      } else {
-        mbMn.style.display = "block";
-      }
-    }
-    function goDark(){
-  var element = document.body;
-  element.classList.toggle("dark");
-};
-fetch('https://media-proxy.jeanouina.workers.dev/?url=https%3A%2F%2Fvitescan.io%2Fvs-api%2Ftoken%3FtokenId%3Dtti_22d0b205bed4d268a05dfc3c%26tabFlag%3Dholders%26pageNo%3D1')
-        .then(response => response.json())
-        .then(data => {
-          // Extract the relevant data from the response object
-          const myParam = data.total;
-
-          // Insert the data into the HTML document
-          const myDataDiv = document.getElementById('my-data');
-          myDataDiv.innerHTML = `My parameter value is ${myParam}`;
-        })
-        .catch(error => console.error(error));
+  <script src="../index.js">
   </script>
 </body>
 </html>
