@@ -67,7 +67,7 @@ async function supplyData(){
   elID('circS').innerHTML = cirP.toFixed(2)+'%';
   elID('circD').innerHTML = (cirS/1000000).toFixed(2)+'M'+' / '+(maxS/1000000).toFixed(2)+'M'
   elID('burnS').innerHTML = brnP.toFixed(2)+'%';
-  elID('burnD').innerHTML = (brnS/1000000).toFixed(2)+'M'+' / '+(maxS/1000000).toFixed(2)+'M'
+  elID('burnD').innerHTML = (brnS/1000000).toFixed(2)+'M'+' / 1B'
 }
 
 // get discord data
