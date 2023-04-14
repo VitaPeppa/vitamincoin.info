@@ -2,14 +2,16 @@
   box-sizing: border-box;
 }
 :root {
+  --bd : #eeeeee;
   --bg : #ffffff;
   --cl : #000000;
   --ac : #e8581c;
   --gr : #2a2a2a;
 }
 .dark {
-  --bg: #000000;
-  --cl: #ffffff;
+  --bd : #111111;
+  --bg : #000000;
+  --cl : #ffffff;
   --ac : #e8581c;
   --gr : #2a2a2a;
 }
@@ -22,13 +24,13 @@ body {
 }
 body {
   font-family: 'JetBrains Mono', monospace;
-  background-color: #eeeeee;
+  background-color: var(--bd);
 }
 .cont {
   margin: 0 auto;
   width: auto;
   max-width: 80em;
-  min-height: 90vh;
+  min-height: 98vh;
   padding: 10px 30px;
   background-color: var(--bg);
 }
@@ -288,4 +290,79 @@ nav > .darkBtn {
   border: none;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.twitrow {
+  display: grid;
+  grid-template-columns: 49.25% 49.75%;
+  column-gap: 1%;
+  padding: 0;
+}
+@media only screen and (max-width: 720px) {
+  .twitrow {
+    grid-template-columns: 100%;
+    row-gap: 10px;
+  }
+  .spacer {
+    display: none ;
+  }
+}
+
+.box1 {
+  display: block;
+  margin: 0;
+  border: solid 1px var(--ac);
+  padding: 10px;
+  color: var(--cl);
+}
+.box1 > .title {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+.twitbox {
+  display: block;
+  margin: 0;
+  width: auto;
+  padding: 10px;
+  border: solid 1px var(--ac);
+}
+.boxC {
+  display: grid;
+  grid-template-columns: 50px auto max-content;
+  margin: 10px 0;
+  width: 100%;
+  height: 60px;
+  border: solid 1px var(--ac);
+  padding: 10px;
+  color: var(--cl);
+}
+.boxC:first-child {
+  margin-top: 0;
+}
+.boxC:last-child {
+  margin-bottom: 0;
+}
+.boxC > svg {
+  width: 40px;
+}
+.boxC > .title {
+  display: block;
+  margin: 0;
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+
+
+/* fk */ 
+
+a {
+  color: var(--cl);
+  text-decoration: none;
 }
