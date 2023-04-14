@@ -366,3 +366,9 @@ a {
   color: var(--cl);
   text-decoration: none;
 }
+
+footer {
+  text-align : center;
+padding: 20px 10px;
+margin-top: solid 1px var(cl)
+}
