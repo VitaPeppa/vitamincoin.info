@@ -41,9 +41,9 @@ async function util() {
   let tvlswap = +vitcswap.tvl
   let tvlstake = +vitcstake.tvl
   let volswap = +vol.volume
-  elID('tvlswap').innerHTML =  tvlswap.toFixed(2) + "$"
-  elID('tvlstake').innerHTML = tvlstake.toFixed(2) + "$"
-  elID('volswap').innerHTML = volswap.toFixed(2) + "$"
+  elID('tvlswap').innerHTML =  "$" + tvlswap.toFixed(2)
+  elID('tvlstake').innerHTML = "$" + tvlstake.toFixed(2)
+  elID('volswap').innerHTML =  "$" + volswap.toFixed(2)
 }
 // get supply and burn data
 async function supplyData(){
@@ -52,11 +52,11 @@ async function supplyData(){
   maxS = supply.max_supply;
   brnS = supply.total_burned;
   cirP = (cirS / maxS) * 100;
-  brnP = (brnS / maxS) * 100;
+  brnP = (brnS / 1000000000) * 100;
   elID('circS').innerHTML = cirP.toFixed(2)+'%';
   elID('circD').innerHTML = (cirS/1000000).toFixed(2)+'M'+' / '+(maxS/1000000).toFixed(2)+'M'
   elID('burnS').innerHTML = brnP.toFixed(2)+'%';
-  elID('burnD').innerHTML = (brnS/1000000).toFixed(2)+'M'+' / '+(maxS/1000000).toFixed(2)+'M'
+  elID('burnD').innerHTML = (brnS/1000000).toFixed(2)+'M'+' / 1B'
 }
 // Loader
 async function loader(){
