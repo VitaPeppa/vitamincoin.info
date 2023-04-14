@@ -370,5 +370,6 @@ a {
 footer {
   text-align : center;
 padding: 20px 10px;
-margin-top: solid 1px var(cl)
+margin-top: solid 1px var(cl);
+color: var(--cl)
 }
