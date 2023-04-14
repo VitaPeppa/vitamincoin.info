@@ -10,6 +10,7 @@ const tURL = 'https://api.vitex.net/api/v2/ticker/24hr?symbols=VITC-000_VITE';
 const sURL = 'https://vite-api.thomiz.dev/supply/circulating/tti_22d0b205bed4d268a05dfc3c'
 const swapURL = 'https://vite-api.thomiz.dev/tvl/vitcswap'
 const stakeURL = 'https://vite-api.thomiz.dev/tvl/beefstake'
+const swapvol = 'https://vitcswap-api.thomiz.dev/api/volume/tti_22d0b205bed4d268a05dfc3c'
 
 // JSON fetcher
 async function getData(tURL){
@@ -32,14 +33,17 @@ async function marketData(){
   elID('nPrice').innerHTML = nPrice;
   elID('cPrice').innerHTML = pChange + ' '+ (cPrice*100).toFixed(2)+'%';
 };
-// get vitcswap and vitcstake TVL
+// get vitcswap and vitcstake TVL & volume
 async function util() {
   let vitcswap = await getData(swapURL)
   let vitcstake = await getData(stakeURL)
+  let vol = await getData(swapvol)
   let tvlswap = +vitcswap.tvl
   let tvlstake = +vitcstake.tvl
+  let volswap = +vol.volume
   elID('tvlswap').innerHTML =  tvlswap.toFixed(2) + "$"
   elID('tvlstake').innerHTML = tvlstake.toFixed(2) + "$"
+  elID('volswap').innerHTML = volswap.toFixed(2) + "$"
 }
 // get supply and burn data
 async function supplyData(){
