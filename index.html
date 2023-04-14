@@ -11,55 +11,52 @@
 </head>
 <body>
   <div class="cont">
+    <a href="http://" target="_blank" rel="noopener noreferrer"></a>
     <nav>
       <span class="mobilemenu" onclick="mobileMenu()">☰</span>
       <span class="title">VITC INFO</span>
       <div class="links">
-        <span class="link"><a href="https://discord.gg/vitamincoin" style="text-decoration: none;" target="_blank" class="navlink">Community</a></span>
-        <span class="link"><a href="https://stake.vitc.org" style="text-decoration: none;" target="_blank" class="navlink">Stake</a></span>
-        <span class="link"><a href="https://swap.vitc.org" style="text-decoration: none; " target="_blank" class="navlink">Swap</a></span>
-        <span class="link"><a href="https://vault.vitc.org" style="text-decoration: none; " target="_blank" class="navlink">Vault</a></span>
-        <span class="link"><a href="https://vitaminfaucet.com" style="text-decoration:none; " target="_blank" class="navlink">Faucet</a></span>
+        <span class="link"><a href="https://discord.gg/vitamincoin" target="_blank">Community</a></span>
+        <span class="link"><a href="https://stake.vitc.org" target="_blank" rel="noopener noreferrer">Stake</a></span>
+        <span class="link"><a href="https://swap.vitc.org" target="_blank" rel="noopener noreferrer">Swap</a></span>
+        <span class="link"><a href="https://vault.vitc.org" target="_blank" rel="noopener noreferrer">Vault</a></span>
+        <span class="link"><a href="https://vitaminfaucet.com" target="_blank" rel="noopener noreferrer">Faucet</a></span>
       </div>
-      <button><a href="https://discord.gg/vitamincoin" target="_blank" style="text-decoration: none; color:inherit">JOIN</a></button>
-      <button class="mbButton">💊</button>
+      <span onclick="goDark()" class="darkBtn" id="darkBtn">☀</span>
+
     </nav>
-    <button onclick="goDark()">Dark mode</button>
     <div id="mbMenu" class="mbMenu">
-      <span class="link"><a href="https://vitaminfaucet.com" style="text-decoration:none; " target="_blank" class="navlink">Faucet</a></span>
-      <span class="link"><a href="https://stake.vitc.org" style="text-decoration: none;" target="_blank" class="navlink">Stake</a></span>
-      <span class="link"><a href="https://swap.vitc.org" style="text-decoration: none; " target="_blank" class="navlink">Swap</a></span>
-      <span class="link"><a href="https://vault.vitc.org" style="text-decoration:none; " target="_blank" class="navlink">Vault</a></span>
+      <span class="link"><a href="https://vitaminfaucet.com" target="_blank" rel="noopener noreferrer">Faucet</a></span>
+      <span class="link"><a href="https://stake.vitc.org" target="_blank" rel="noopener noreferrer">Stake</a></span>
+      <span class="link"><a href="https://swap.vitc.org" target="_blank" rel="noopener noreferrer">Swap</a></span>
+      <span class="link"><a href="https://vault.vitc.org" target="_blank" rel="noopener noreferrer">Vault</a></span>
     </div>
     <div class="rowbox0">
       <div class="box0">
         <span class="subtitle">Token Holders</span>
-        <span class="title"><p id="myParagraph"></p></span>
+        <span class="title" id="tokenHolders"></span>
         <span class="foot">address</span>
       </div>
       <div class="box0">
-        <span class="subtitle">Price</span>
-        <span class="title"><p id="usd"></p></span>
-        <span class="foot">USD</span>
+        <span class="subtitle">Price (VITE)</span>
+        <span class="title" id="nPrice"></span>
+        <span class="foot" id="cPrice"></span>
       </div>
       <div class="box0">
         <span class="subtitle">Circulating Supply</span>
-        <span class="title"><p id="circ">%</p></span>
-        <span class="foot">smth will here</span>
+        <span class="title" id="circS"></span>
+        <span class="foot" id="circD"></span>
       </div>
       <div class="box0">
         <span class="subtitle">Total Burn</span>
-        <span class="title"><p id="burn"></p></span>
-        <span class="foot">Price</span>
+        <span class="title" id="burnS"></span>
+        <span class="foot" id="burnD"></span>
       </div>
-
     </div>
-
   </div>
 
 
   <script src="./index.js">
-   
   </script>
 </body>
 </html>

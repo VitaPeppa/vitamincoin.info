@@ -3,7 +3,13 @@
 }
 :root {
   --bg : #ffffff;
-  --cl : #e8581c;
+  --cl : #000000;
+  --ac : #e8581c;
+  --gr : #2a2a2a;
+}
+.dark {
+  --bg: #000000;
+  --cl: #ffffff;
   --ac : #e8581c;
   --gr : #2a2a2a;
 }
@@ -18,11 +24,6 @@ body {
   font-family: 'JetBrains Mono', monospace;
   background-color: #eeeeee;
 }
-@media only screen and (max-width: 720px) {
-  body {
-    padding: 0;
-  }
-}
 .cont {
   margin: 0 auto;
   width: auto;
@@ -31,6 +32,22 @@ body {
   padding: 10px 30px;
   background-color: var(--bg);
 }
+@media only screen and (max-width: 720px) {
+  body {
+    padding: 0;
+  }
+  .cont {
+    margin: 0;
+    width: 100%;
+    padding: 10px 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cont {
+    padding: 10px;
+  }
+}
+
 nav {
   height: 60px;
   padding: 10px 5px;
@@ -45,6 +62,7 @@ nav > .title {
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
+  color: var(--cl);
 }
 nav > .links {
   display: block;
@@ -54,12 +72,17 @@ nav > .links {
   font-weight: 500;
   line-height: 24px;
   text-align: center;
-  color: var(--ac)
+  color: var(--ac);
 }
 nav > .links > .link {
   padding: 0 5px;
   cursor: pointer;
   color: var(--cl);
+}
+
+nav > .links > .link > a {
+  color: var(--cl);
+  text-decoration: none;
 }
 nav > .links > .link:hover {
   border-bottom: solid 2px var(--ac);
@@ -77,6 +100,7 @@ nav > button {
   cursor: pointer;
   border-radius: 7.5px;
 }
+
 nav > .mbButton {
   display: none;
   height: 40px;
@@ -108,6 +132,7 @@ nav > .mobilemenu {
   line-height: 30px;
   cursor: pointer;
   text-align: center;
+  color: var(--cl);
 }
 nav > .mobilemenu:hover {
   background-color: var(--ac);
@@ -131,6 +156,15 @@ nav > .mobilemenu:hover {
   line-height: 20px;
   border: solid 1px var(--gr);
   cursor: pointer;
+}
+.mbMenu > .link:hover {
+  outline: solid 1px var(--ac);
+  border: solid 1px var(--ac);
+  color: var(--ac);
+}
+.mbMenu > .link > a {
+  text-decoration: none;
+  color: var(--cl);
 }
 .mbMenu > .link:first-child {
   margin-top: 0;
@@ -172,8 +206,9 @@ nav > .mobilemenu:hover {
 .box0 {
   display: block;
   margin: 0;
-  border: solid 1px var(--cl);
+  border: solid 1px var(--ac);
   padding: 10px;
+  color: var(--cl);
 }
 .box0 > .subtitle {
   display: block;
@@ -196,6 +231,7 @@ nav > .mobilemenu:hover {
   font-size: 16px;
   font-weight: 400;
 }
+
 @media only screen and (max-width: 720px) {
   .rowbox0 {
     grid-template-columns: 49.5% 49.5%;
@@ -233,17 +269,20 @@ nav > .mobilemenu:hover {
   .box0 > .foot {
     display: none;
   }
+
 }
-.dark {
-  --bg: #000000;
-  --cl: #e8581c;
-  --ac : #e8581c;
-  --gr : #d5d5d5;
-  --fc : #d5d5d5;
-  background-color: #111111;
-  color: var(--fc); 
-  
-}
-.navlink {
-  color: var(--gr);
+nav > .darkBtn {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 5px 0;
+  height: 30px;
+  padding: 3px 5px;
+  background-color: transparent;
+  color: var(--cl);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
 }
