@@ -99,4 +99,24 @@ function mobileMenu(){
 function goDark(){
   var element = document.body;
   element.classList.toggle("dark");
+  localStorage.setItem('screenMode','dark')
+  elID('darkBtn').setAttribute('onclick','goLight()');
 };
+function goLight(){
+  var element = document.body;
+  element.classList.toggle("dark");
+  localStorage.setItem('screenMode','light');
+  elID('darkBtn').setAttribute('onclick','goDark()');
+};
+function chkMode(){
+  if(!localStorage.getItem('screenMode')){
+    localStorage.setItem('screenMode','light')
+  } else {
+    if(localStorage.getItem('screenMode') === 'light'){
+      console.log('its light')
+    } else {
+      goDark();
+    }
+  }
+}
+chkMode();
