@@ -8,6 +8,8 @@ const hURL = 'https://media-proxy.jeanouina.workers.dev/?url=https%3A%2F%2Fvites
 const vURL = 'https://api.vitex.net/api/v2/market?symbol=VITC-000_VITE';
 const tURL = 'https://api.vitex.net/api/v2/ticker/24hr?symbols=VITC-000_VITE';
 const sURL = 'https://vite-api.thomiz.dev/supply/circulating/tti_22d0b205bed4d268a05dfc3c'
+const swapURL = 'https://vite-api.thomiz.dev/tvl/vitcswap'
+const stakeURL = 'https://vite-api.thomiz.dev/tvl/beefstake'
 
 // JSON fetcher
 async function getData(tURL){
@@ -30,7 +32,15 @@ async function marketData(){
   elID('nPrice').innerHTML = nPrice;
   elID('cPrice').innerHTML = pChange + ' '+ (cPrice*100).toFixed(2)+'%';
 };
-
+// get vitcswap and vitcstake TVL
+async function util() {
+  let vitcswap = await getData(swapURL)
+  let vitcstake = await getData(stakeURL)
+  let tvlswap = +vitcswap.tvl
+  let tvlstake = +vitcstake.tvl
+  elID('tvlswap').innerHTML =  tvlswap.toFixed(2) + "$"
+  elID('tvlstake').innerHTML = tvlstake.toFixed(2) + "$"
+}
 // get supply and burn data
 async function supplyData(){
   let supply = await getData(sURL);
@@ -49,6 +59,7 @@ async function loader(){
   await holderData();
   await marketData();
   await supplyData();
+  await util()
 };
 loader();
 // DOM Script

@@ -201,6 +201,7 @@ nav > .mobilemenu:hover {
   display: grid;
   grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
   column-gap: 1%;
+  row-gap: 5px;
   padding: 10px 0;
 }
 .box0 {
@@ -242,11 +243,13 @@ nav > .mobilemenu:hover {
   .rowbox0 {
     display: block;
     grid-template-columns: 100%;
+    row-gap: 25px;
   }
   .box0 {
     display: grid;
     grid-template-columns: auto auto;
     margin-bottom: 5px;
+    row-gap: 25px;
   }
   .box0:last-child {
     margin-bottom: 0;
