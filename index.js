@@ -15,9 +15,7 @@ const dURL = 'https://discord.com/api/v9/invites/vitamincoin?with_counts=true';
 
 // JSON fetcher
 async function getData(tURL){
-  let getRaw = await fetch(tURL);
-  let toJson = await getRaw.json();
-  return toJson;
+  return await fetch(tURL).then(res => res.json());
 }
 // get token holders
 async function holderData() {
