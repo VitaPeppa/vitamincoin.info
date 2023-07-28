@@ -1,4 +1,2 @@
 # vitamincoin.info
-vitcinfo
-to do
-add mcappppppppppp
+VITCInfo - a site built by 2 community members displaying various statistics of Vitamin Coin.
