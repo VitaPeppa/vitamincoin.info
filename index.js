@@ -118,3 +118,78 @@ function chkMode(){
   }
 }
 chkMode();
+
+function priceHistory(coin, base, pair, color) {
+  fetch('https://api.vitex.net/api/v2/klines?symbol=VITC-000_VITE&interval=day&limit=30')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      var pMap = [];
+      var tMap = [];
+      var vMap = [];
+
+      for (let i = 0; i < json.data.c.length; i++) {
+        var cDte = new Date(json.data.t[i] * 1000).toLocaleDateString("id-ID");
+        var cPrc = json.data.c[i].toFixed(10);
+        var cVol = json.data.t[i].toFixed(2);
+        pMap.push(cPrc);
+        tMap.push(cDte);
+        vMap.push(cVol);
+      }
+
+      var maxV = Math.max(...pMap).toFixed(10);
+      var minV = Math.min(...pMap).toFixed(10);
+      var maxVc = (Math.max(...pMap) * 1.05).toFixed(10);
+      var minVc = (Math.min(...pMap) * 0.95).toFixed(10);
+      var ratHL = ((maxV / minV) * 100).toFixed(2);
+
+      var tVol = json.data.v.reduce(function(a, b) { return a + b; }, 0);
+      var hVol = '';
+      if (tVol >= 1000000000) {
+        hVol = (tVol / 1000000000).toFixed(2) + ' B';
+      } else if (tVol >= 1000000) {
+        hVol = (tVol / 1000000).toFixed(2) + ' M';
+      } else {
+        hVol = (tVol / 1000).toFixed(2) + ' K';
+      }
+
+      var xValues = tMap;
+      var yValues = pMap;
+      
+      new Chart("pCrt", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [{
+            fill: true,
+            lineTension: 0.1,
+            backgroundColor: "#5A5A5A",
+            borderColor: "#e8581c",
+            data: yValues
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          aspectRatio: 4/2,
+          legend: {display: false},
+          scales: {
+            yAxes: [
+              {ticks:
+                {min: Number(minV), max: Number(maxV)}
+              }
+            ],
+          }
+        }
+      });
+    });
+};
+
+function defData(){
+  coin="VITC-000";
+  base="VITE";
+  pair="VITC-000_VITE";
+  priceHistory(coin,base,pair);
+}
+defData()
