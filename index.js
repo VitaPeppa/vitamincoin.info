@@ -120,7 +120,7 @@ function chkMode(){
 chkMode();
 
 function priceHistory(coin, base, pair, color) {
-  fetch('https://api.vitex.net/api/v2/klines?symbol=VITC-000_VITE&interval=day&limit=30')
+  fetch('https://api.vitex.net/api/v2/klines?symbol=VITC-000_VITE&interval=day&limit=28')
     .then(function(response) {
       return response.json();
     })
