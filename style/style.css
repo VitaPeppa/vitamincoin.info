@@ -391,3 +391,10 @@ footer {
   margin-top: solid 1px var(cl);
   color: var(--ac);
 }
+
+.wawa {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
