@@ -148,7 +148,7 @@ nav > .mobilemenu:hover {
   border: solid 1px var(--gr);
   border-top: none;
 }
-.mbMenu > .link {
+.mbMenu > a {
   display: block;
   margin: 10px 0;
   color: var(--cl);
@@ -159,22 +159,22 @@ nav > .mobilemenu:hover {
   border: solid 1px var(--gr);
   cursor: pointer;
 }
-.mbMenu > .link:hover {
+.mbMenu > a:hover {
   outline: solid 1px var(--ac);
   border: solid 1px var(--ac);
   color: var(--ac);
 }
-.mbMenu > .link > a {
+.mbMenu  > a {
   text-decoration: none;
   color: var(--cl);
 }
-.mbMenu > .link:first-child {
+.mbMenu > a:first-child {
   margin-top: 0;
 }
-.mbMenu > .link:last-child {
+.mbMenu > a:last-child {
   margin-bottom: 0;
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 860px) {
   .cont {
     margin: 0;
     width: 100%;
@@ -277,7 +277,7 @@ nav > .mobilemenu:hover {
 
 }
 nav > .darkBtn {
-  display: grid;
+  display: block;
   grid-template-columns: 50% 50%;
   margin: 5px 0;
   height: 30px;
@@ -390,7 +390,10 @@ footer {
 
 .wawa {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 30%;
+}
+
+footer > a {
+  font-size: 12.5px;
 }
